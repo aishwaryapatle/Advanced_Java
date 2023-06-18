@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 5.3//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-5.3.dtd">
+ 
+ <hibernate-mapping>
+  
+     <class name="model.Student" table="student101">
+         
+         <id name="roll" column="sroll">
+             <generator class="assigned"></generator>
+         </id>
+         
+     	<property name="name" column="sname"></property>
+     	<property name="address" column="saddress"></property>
+     	
+     </class>
+     
+ </hibernate-mapping>
+ 
+ 
+ 
+<!-- "Steps to crete a .hbm.xml file" 
+
+	 1. Importing the necessary file (.dtd)
+ 
+	 2. <hibernate-mapping> as the root element, which contains all the <class> elements
+	 
+	 3. <class> - defines specific mappings from a Java classes to the database tables
+	 	i. name="packagename.classname" table="table_name"
+	 	
+	 4. <meta> (optional) - can be used to create the class description
+	 
+	 5. <id> - maps the unique ID attribute in class to the primary key of the database table
+	 	a) name - attribute refers to the property in the class
+	 	b) column - attribute refers to the column in the database table
+	 	c) type - attribute holds the hibernate mapping type, this mapping types will convert from Java to SQL data type
+	 	
+	 5. <generator> = to generate the primary key values automatically
+	 
+	 6. <property> - to map a Java class property to a column in the database table
+	 	a. name attribute = refers to the property in the class
+	 	b. column attribute(optional)= refers to the column in the database table
+	 	
+	 -->
