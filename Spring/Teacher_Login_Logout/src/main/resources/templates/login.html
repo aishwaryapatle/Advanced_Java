@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Login</title>
+</head>
+<body>
+
+    <span th:if="${error}"></span>
+
+<form action="#" th:action="@{/login}" method="get">
+    
+    <label for="name">Email</label>
+    <input type="text" name="email" id="email" placeholder="Email">
+    <br><br>
+    
+    <label for="email">Password</label>
+    <input type="text" name=password id="password" placeholder="Password">
+    <br><br>
+    <input type="submit" value="Login">   
+</form>
+
+<div>
+	<a th:href="@{/regform}">Register</a>
+</div>
+</body>
+</html>

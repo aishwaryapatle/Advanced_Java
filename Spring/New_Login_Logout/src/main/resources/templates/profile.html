@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--<title>Profile Card UI Design</title>-->
+
+    <!-- CSS -->
+    <link rel="stylesheet" th:href="@{/css/profile_page_style.css}" />
+
+    <!-- Boxicons CSS -->
+    <link th:href="@{https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css}"
+      rel="stylesheet"/>
+  </head>
+  
+  
+                
+  <body>
+    <div class="profile-card" th:switch="${user}">
+      <h2 th:case="null">No user yet!</h2>
+      <div class="image" th:case="*">
+        <!--<img src="profile.jpg" alt="" class="profile-img" />-->
+      </div>
+
+      <div class="text-data" th:each="user : ${user}">
+      	<h2>Hello <span class="name" th:text="${user.fname}"></span></h2>
+      	<p>ID : <span class="job" th:text="${user.id}"></span></p>
+      	<p>First Name : <span class="job" th:text="${user.fname}"></span></p>
+      	<p>Last Name : <span class="job" th:text="${user.lname}"></span></p>
+      	<p>Email : <span class="job" th:text="${user.email}"></span></p>
+      	<p>Password : <span class="job" th:text="${user.password}"></span></p>
+      </div>
+
+
+
+      <div class="buttons">
+      <a th:href="@{/logout}" class="button">Logout</a>
+       
+      </div>
+
+      <!--  <div class="analytics">
+        <div class="data">
+          <i class="bx bx-heart"></i>
+          <span class="number">60k</span>
+        </div>
+        <div class="data">
+          <i class="bx bx-message-rounded"></i>
+          <span class="number">20k</span>
+        </div>
+        <div class="data">
+          <i class="bx bx-share"></i>
+          <span class="number">12k</span>
+        </div>
+      </div> -->
+    </div>
+  </body>
+</html>
+

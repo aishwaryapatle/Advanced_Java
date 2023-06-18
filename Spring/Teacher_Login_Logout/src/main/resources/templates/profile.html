@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Profile</title>
+</head>
+<body>
+
+<h1>Welcome, User!</h1>
+    <p>Your email address is <span th:text="${email}"></span>.</p>
+    
+    <div th:switch="${teachers}">
+    <h2 th:case="null">No users yet!</h2>
+        <div th:case="*">
+            <h2>Users</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                    </tr>
+                </thead>
+                <tbody>
+                <tr th:each="user : ${teachers}">
+                    <td th:text="${user.id}"></td>
+                    <td th:text="${user.name}"></td>
+                    <td th:text="${user.email}"></td>
+                    <td th:text="${user.password}"></td>
+                    <td><a th:href="@{/edit/{id}(id=${user.id})}">Edit</a></td>
+                    <td><a th:href="@{/delete/{id}(id=${user.id})}">Delete</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>      
+    
+    
+    <form method="post" action="/logout">
+        <input type="submit" value="Logout">
+        
+    </form>
+</body>
+</html>

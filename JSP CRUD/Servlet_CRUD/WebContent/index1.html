@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Home</title>
+</head>
+<body>
+
+<h1>Add Employee</h1>
+
+<form action="addEmployee.jsp" method="get">
+
+<select name="fname_lname" id="fname_lname">
+	<option>-- Select Services --</option>  
+	<option value="Pune">Pune</option>
+  	<option value="Banglore">Banglore</option>
+  	<option value="Bhandara">Bhandara</option>
+</select>
+
+<%
+//Storing the services from database into list
+			List<Service> list = null;
+			
+				try {
+					list = ServiceDao.getServiceNamePrice();
+				} catch (ClassNotFoundException | SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			
+			
+			//retrieving service name and price from list
+			for(Service s : list) {
+				out.print("<option value='"+s.getSprice()+"'>"+s.getSname()+"</option>");
+			}
+			out.print("                        </select>");
+			
+<br><br>
+
+<label for="fname">First Name:</label>
+<input type="text" id="fname" name="fname"> 
+<br><br>
+
+<label for="lname">Last Name:</label>
+<input type="text" id="lname" name="lname"> 
+<br><br>
+
+<label for="gender">Gender:</label>
+Male:<input type="radio" id="gender" name="gender" value="male">
+Female:<input type="radio" id="gender" name="gender" value="female">
+<br><br>
+
+<label for="mobile">Mobile No:</label>
+<input type="text" id="mobile" name="mobile"> 
+<br><br>
+
+<label for="email">Email:</label>
+<input type="email" id="email" name="email"> 
+<br><br>
+
+<label for="dob">DOB:</label>
+<input type="date" id="dob" name="dob"> 
+<br><br>
+
+<label for="city">City</label>
+<select name="city" id="city">
+  <option value="Nagpur">Nagpur</option>
+  <option value="Pune">Pune</option>
+  <option value="Banglore">Banglore</option>
+  <option value="Bhandara">Bhandara</option>
+</select>
+<br><br>
+
+<label for="skill">Skills</label>
+<input type="checkbox" name="skill" value="Cricket">Cricket<br>
+<input type="checkbox" name="skill" value="Football">Football<br>
+<input type="checkbox" name="skill" value="Hockey">Hockey<br>
+<input type="checkbox" name="skill" value="Tennis">Tennis<br>
+
+
+<input type="submit" value="SAVE">
+
+</form>
+
+<a href="show.jsp">Show all employees</a>
+
+
+</body>
+</html>

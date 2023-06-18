@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>JSP Day 01</title>
+</head>
+<style>
+.css-styled-table {
+	border-collapse: collapse;
+	margin: 25px 0;
+	font-size: 0.9em;
+	font-family: sans-serif;
+	min-width: 400px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.css-styled-table thead tr {
+	background-color: #009879;
+	color: #ffffff;
+	text-align: left;
+}
+
+.css-styled-table th, .css-styled-table td {
+	padding: 12px 15px;
+}
+
+.css-styled-table tbody tr {
+	border-bottom: 1px solid #dddddd;
+}
+
+.css-styled-table tbody tr:nth-of-type(even) {
+	background-color: #f3f3f3;
+}
+
+.css-styled-table tbody tr:last-of-type {
+	border-bottom: 2px solid #009879;
+}
+
+.css-styled-table tbody tr.active-row {
+	font-weight: bold;
+	color: #009879;
+}
+</style>
+<body>
+
+	<form action="home.jsp">
+		<table class="css-styled-table">
+			
+			<tr>
+				<td>First Name:</td>
+				<td><input type="text" name="firstname"></td>
+			</tr>
+			<tr>
+				<td>Last Name:</td>
+				<td><input type="text" name="lastname"></td>
+			</tr>
+			<tr>
+				<td>Gender:</td>
+				<td><input type="radio" name="gender" value="male">Male
+					<br>
+				<input type="radio" name="gender" value="female">Female</td>
+			</tr>
+			<tr>
+				<td>Email:</td>
+				<td><input type="email" name="email" /></td>
+			</tr>
+			<tr>
+				<td>Salary:</td>
+				<td><input type="text" name="salary" /></td>
+			</tr>
+		
+			<tr>
+				<td colspan="2" style="text-align: center;"><input
+					style="width: 80px" type="submit" value="Save" /></td>
+			</tr>
+		</table>
+	</form>
+	
+</body>
+</html>

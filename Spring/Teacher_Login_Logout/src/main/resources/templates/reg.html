@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Registration</title>
+</head>
+<body>
+
+
+<form action="#" th:action="@{/signup}" th:object="${teacher}" method="get">
+    <label for="name">Name</label>
+    <input type="text" th:field="*{name}" id="name" placeholder="Name">
+    <br><br>
+    
+    <label for="name">Email</label>
+    <input type="text" th:field="*{email}" id="name" placeholder="Email">
+    <br><br>
+    
+    <label for="email">Password</label>
+    <input type="text" th:field="*{password}" id="email" placeholder="Password">
+    <br><br>
+    <input type="submit" value="Register">   
+</form>
+
+<div>
+	<a th:href="@{/loginform}">Login</a>
+</div>
+</body>
+</html>

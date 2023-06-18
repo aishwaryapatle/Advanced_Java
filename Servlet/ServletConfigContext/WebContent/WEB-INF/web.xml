@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <display-name>ServletConfigContext</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+      <servlet-name>serv1</servlet-name>
+      <servlet-class>Servlet1</servlet-class>
+      
+      <init-param>
+          <param-name>HR_name</param-name>
+          <param-value>Aishwarya</param-value>
+      </init-param>
+      
+      <init-param>
+          <param-name>Bonus</param-name>
+          <param-value>50%</param-value>
+      </init-param>
+      
+  </servlet>
+  
+  <servlet-mapping>
+      <servlet-name>serv1</servlet-name>
+      <url-pattern>/test1</url-pattern>
+  </servlet-mapping>
+  
+  <context-param>
+      <param-name>driver</param-name>
+      <param-value>com.mysql.cj.jdbc.driver</param-value>
+  </context-param>
+  
+</web-app>
